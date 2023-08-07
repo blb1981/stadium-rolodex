@@ -1,0 +1,52 @@
+{
+  "stadiums": [
+    {
+      "id": 1,
+      "name": "Busch Memorial Stadium",
+      "team": "St. Louis Cardinals",
+      "image": "busch-memorial-stadium.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Comiskey Park",
+      "team": "Chicago White Sox",
+      "image": "comiskey-park.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Municipal Stadium",
+      "team": "Cleveland Indians",
+      "image": "municipal-stadium.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Riverfront Stadium",
+      "team": "Cincinnati Reds",
+      "image": "riverfront-stadium.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Three Rivers Stadium",
+      "team": "Pittsburgh Pirates",
+      "image": "three-rivers-stadium.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Tiger Stadium",
+      "team": "Detroit Tigers",
+      "image": "tiger-stadium.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Veterans Stadium",
+      "team": "Philadelphia Phillies",
+      "image": "veterans-stadium.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Yankee Stadium",
+      "team": "New York Yankees",
+      "image": "yankee-stadium.jpg"
+    }
+  ]
+}
