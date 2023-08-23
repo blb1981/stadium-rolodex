@@ -1,22 +1,33 @@
 // import { Component } from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 
 // import logo from './logo.svg'
-import './App.css'
 import CardList from './components/card-list/card-list.component'
 import SearchBox from './components/search-box/search-box.component'
 
+import { getData } from './utils/data.utils'
+import './App.css'
+
+export type Stadium = {
+  id: number
+  name: string
+  image: string
+  team: string
+}
+
 const App = () => {
   const [searchString, setSearchString] = useState('')
-  const [stadiums, setStadiums] = useState([])
+  const [stadiums, setStadiums] = useState<Stadium[]>([])
   const [filteredStadiums, setfilteredStadiums] = useState(stadiums) // use stadiums array as default
 
   useEffect(() => {
-    fetch('http://localhost:5000/stadiums')
-      .then((response) => response.json())
-      .then((stadiums) => {
-        setStadiums(stadiums)
-      })
+    const fetchStadiums = async () => {
+      const stadiums = await getData<Stadium[]>(
+        'http://localhost:5000/stadiums'
+      )
+      setStadiums(stadiums)
+    }
+    fetchStadiums()
   }, []) // empty array since only needed once when component renders
 
   useEffect(() => {
@@ -30,7 +41,7 @@ const App = () => {
     setfilteredStadiums(newfilteredStadiums) // update stadium list
   }, [stadiums, searchString]) // only needed when search box or stadium list is updated
 
-  const onSearchChnage = (e) => {
+  const onSearchChnage = (e: ChangeEvent<HTMLInputElement>): void => {
     const searchString = e.target.value.toLocaleLowerCase()
     setSearchString(searchString)
   }

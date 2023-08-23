@@ -1,9 +1,14 @@
 // import { Component } from 'react'
+import { Stadium } from '../../App'
 
 import './card.styles.css'
 
-const Card = (props) => {
-  const { name, image, team } = props.stadium
+type CardProps = {
+  stadium: Stadium
+}
+
+const Card = ({ stadium }: CardProps) => {
+  const { name, image, team } = stadium
 
   return (
     <div className='card'>

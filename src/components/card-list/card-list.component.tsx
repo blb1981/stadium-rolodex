@@ -1,9 +1,15 @@
 // import { Component } from 'react'
 
 import Card from '../card/card.component'
+
+import { Stadium } from '../../App'
 import './card-list.styles.css'
 
-const CardList = ({ stadiums }) => {
+type CardListProps = {
+  stadiums: Stadium[]
+}
+
+const CardList = ({ stadiums }: CardListProps) => {
   return (
     <>
       <div className='card-container'>
